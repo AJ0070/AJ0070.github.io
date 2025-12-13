@@ -1,11 +1,11 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://shravangoswami.com/", // replace this with your deployed domain
-  author: "Shravan Goswami",
-  profile: "https://shravangoswami.com/",
-  desc: "Shravan Goswami's Portfolio.",
-  title: "Shravan Goswami",
+  website: "https://aj0070.github.io/", // replace this with your deployed domain
+  author: "Jash Ambaliya",
+  profile: "https://aj0070.github.io/",
+  desc: "Jash Ambaliya's Portfolio.",
+  title: "Jash Ambaliya",
   // ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
@@ -28,7 +28,7 @@ export const LOGO_IMAGE = {
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/shravanngoswamii",
+    href: "https://github.com/AJ0070",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
@@ -46,19 +46,19 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/shravangoswami/",
+    href: "https://www.linkedin.com/in/jash0070/",
     linkTitle: `${SITE.title} on LinkedIn`,
     active: true,
   },
   {
     name: "Mail",
-    href: "mailto:shravanngoswamii@gmail.com",
+    href: "mailto:jashambaliya1@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
   },
   {
     name: "Twitter",
-    href: "https://x.com/shravangoswamii",
+    href: "https://x.com/jash_0070",
     linkTitle: `${SITE.title} on Twitter`,
     active: true,
   },

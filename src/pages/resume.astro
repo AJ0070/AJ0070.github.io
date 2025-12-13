@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
-const resumePDF = "/resume.pdf";
+const resumePDF = "/resume-1.pdf";
 ---
 
 <Layout title={`Resume | ${SITE.title}`}>
@@ -14,20 +14,8 @@ const resumePDF = "/resume.pdf";
     id="main-content"
     style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 2rem;"
   >
-    <h1>Shravan's Resume</h1>
-    <LinkButton
-      href={resumePDF}
-      className="my-6 text-lg underline decoration-dashed underline-offset-8"
-    >
-      Download the PDF
-    </LinkButton>
-    <iframe
-      src={resumePDF}
-      style="display: block; justify-content: center; width: 50%; height: 100vh; border: none; margin: 0 auto;"
-      title="My Resume"
-    >
-      This browser does not support PDFs.
-    </iframe>
+    <h1>Jash's Resume</h1>
+    <p class="my-6 text-lg">Resume coming soon!</p>
   </main>
   <Footer />
 </Layout>

@@ -46,7 +46,7 @@ jobs:
         with:
           message: |
             <!-- preview-url-comment -->
-            Preview the changes: https://shravanngoswamii.github.io/portfolio/pr-previews/${{ github.event.pull_request.number }}
+            Preview the changes: https://aj0070.github.io/pr-previews/${{ github.event.pull_request.number }}
             Please avoid using the search feature and navigation bar in PR previews!
           comment_tag: preview-url-comment
         env:

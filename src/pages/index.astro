@@ -9,23 +9,15 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
-import { getPublications } from "@utils/bibtexUtils";
 import { TbRss, TbArrowRight } from "react-icons/tb";
 
 const posts = await getCollection("blog");
-const publications = await getPublications();
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter((social) => social.active).length;
-
-const getRelatedPubs = (tags: string[]) => {
-  return publications.filter(pub => 
-    pub.entryTags.keywords && tags.some(tag => pub.entryTags.keywords?.toLowerCase().includes(tag.toLowerCase()))
-  ).map(pub => ({ title: pub.entryTags.title || "", url: pub.entryTags.url }));
-};
 ---
 
 <Layout>
@@ -45,11 +37,8 @@ const getRelatedPubs = (tags: string[]) => {
       </a>
 
       <p>
-        Shravan Goswami is a Research Assistant at Univerity of Cambridge,
-        Google Summer of Code - GSoC 2025 Contributor with <a
-          href="https://julialang.org/">The Julia Language</a
-        > and a pre-final year student of B.Tech. Computer Science & Engineering
-        + SIH'24 Finalist!
+        Pre-final year CSE student driven by AI/ML, crafting open-source
+        solutions and thriving in the world of competitive programming.
       </p>
       <p>
         Read the
@@ -82,22 +71,6 @@ const getRelatedPubs = (tags: string[]) => {
           </div>
         )
       }
-
-      <div class="mt-8 p-6 bg-skin-card rounded-xl border border-skin-line/20 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex flex-col gap-1 text-center sm:text-left">
-          <h3 class="text-lg font-bold text-skin-base">Support my work</h3>
-          <p class="text-sm text-skin-base/80">
-            If you find my projects helpful, consider sponsoring me on GitHub!
-          </p>
-        </div>
-        <iframe
-          src="https://github.com/sponsors/shravanngoswamii/button"
-          title="Sponsor shravanngoswamii"
-          height="32"
-          width="114"
-          style="border: 0; border-radius: 6px;"
-        ></iframe>
-      </div>
     </section>
 
     <Hr />
@@ -113,7 +86,6 @@ const getRelatedPubs = (tags: string[]) => {
                   href={`/blog/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
-                  relatedPublications={getRelatedPubs(data.tags)}
                 />
               ))}
             </ul>
@@ -135,7 +107,6 @@ const getRelatedPubs = (tags: string[]) => {
                     href={`/blog/${slug}/`}
                     frontmatter={data}
                     secHeading={false}
-                    relatedPublications={getRelatedPubs(data.tags)}
                   />
                 ),
             )}
